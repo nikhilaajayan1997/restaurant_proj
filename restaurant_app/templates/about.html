@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+
+    #div2 {
+      
+      position: relative;
+      animation-name: example1;
+      animation-duration: 2s;  
+      animation-fill-mode: forwards;
+    }
+    @keyframes example1 {
+      from {top:100px;}
+      to {top: 30px; color: rgb(199, 197, 197);}
+      
+    }
+    
+    
+    </style>
+    
+    <div style="background-image: url(https://cdn.wallpapersafari.com/74/68/4lrfTG.jpg);background-repeat: no-repeat;background-size: cover;height: 450px;">
+        <div style="background-color: rgba(128, 84, 3, 0.514);height: 450px;">
+            <div class="row ">
+                <div class="col-sm-12 col-md-4 col-lg-4">
+            
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <div id="div2">
+                        <h1 style="font-family: cursive;color: rgb(247, 244, 244);text-align: center;margin-top: 30%;font-size: 500%;">About Us</h1>
+                        <h5 style="color: white;text-align: center;">Home > About Us ></h5>
+    
+                    </div>
+          
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4"></div>
+              </div>
+            
+        </div>
+      </div>
+
+
+
+      <div style="background-image: url(https://i.pinimg.com/originals/18/71/40/1871406a66cb03c94da8635e8261c5e4.jpg);background-repeat: no-repeat;background-size: cover;">
+        <div class="row pt-5 pb-5">
+            <div class="col-sm-12 col-md-6 col-lg-6 ps-4 pe-4">
+                <div style="width: 100%;height: 250px;" >
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa4Qgxilofu7Mj8cdAd6Isaa6ESL1pX5FoVbM_H8jZrFLCDUstPDGg1yKDdrBvzFZxAcI&usqp=CAU" alt=""  style="width: 100%;height: 100%;">
+                </div>
+    
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 ps-4 pe-4">
+                <div class="p-3" style="width: 100%;margin-top: 10%;background-color: rgba(53, 52, 52, 0.747);">
+                    <h1 style="font-family: cursive;color: white;">OUR STORY</h1>
+                    <p style="text-align: justify;color: rgb(179, 118, 6);">
+                        On her way she met a copy. The copy warned the Little Blind Text, that where it came from
+                         it would have been rewritten a thousand times and everything that was left from its origin would be
+                          the word "and" and the Little Blind Text should turn around and return to its own, safe country. 
+                          But nothing the copy said could convince her and so it didn’t take long until a few insidious
+                           Copy Writers ambushed her,
+                         made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.
+    
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background-image: url(https://i.pinimg.com/originals/18/71/40/1871406a66cb03c94da8635e8261c5e4.jpg);background-repeat: no-repeat;background-size: cover;">
+        <div class="row pt-1 ">
+            <div class="col-sm-12 col-md-6 col-lg-6 ps-4 pe-4">
+                <div class="row " style="margin-top: 10%;">
+                    <div class="col-sm-12 col-md-3 col-lg-3"></div>
+                    <div class="col-sm-12 col-md-3 col-lg-3"></div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <h1 style="font-family: cursive;color: aliceblue;">OUR MENU</h1>
+    
+                <p class="p-2" style="text-align: justify;color: rgb(168, 166, 166);">
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. 
+                    Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+                </p>
+                <a href="{% url 'products' %}" class="btn btn-outline-warning ms-2">View Menu</a>
+                    </div>
+                </div>
+    
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 pb-4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6 ps-4 pe-4">
+                        <div class="mt-3" style="height: 200px; ">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgfangFNWwpUuAlEq8E7myN2WCIHi1-VEfiA&usqp=CAU" alt="" style="width: 100%;height: 200px;border-radius: 20px;">
+    
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6 ps-4 pe-4">
+                      <div class="mt-3"  style="height: 200px;">
+                        <img src="https://static.toiimg.com/thumb/86367814.cms?width=680&height=512&imgsize=61542" alt="" style="width: 100%;height: 200px;border-radius: 20px;">
+    
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6 col-lg-6 ps-4 pe-4">
+                    <div class="mt-3" style="width: 100%;height: 200px;">
+                            <img src="https://media.istockphoto.com/id/1367031369/photo/latte-art-on-wooden-table.jpg?b=1&s=170667a&w=0&k=20&c=yfPniL73rfwCEDVEA2rAQJzm9WeVKGJlHz1Dzpa86Co=" alt="" style="width: 100%;height: 200px;border-radius: 20px;">
+    
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6 ps-4 pe-4">
+                      <div class="mt-3"  style="width: 100%;height: 200px;">
+                        <img src="https://static.toiimg.com/thumb/86367814.cms?width=680&height=512&imgsize=61542" alt="" style="width: 100%;height: 200px;border-radius: 20px;">
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+{% endblock %}

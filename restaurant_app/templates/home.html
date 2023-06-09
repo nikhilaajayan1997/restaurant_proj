@@ -1,0 +1,598 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+@keyframes example {
+        0%   { left:0px; top:0px;}
+  25%  {background-color:rgb(134, 134, 131); }
+
+}
+#coffee{
+    color: rgb(194, 127, 4);
+    border: 1px solid rgb(194, 127, 4);
+    margin-left: 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+#coffee:hover{
+    color: white;
+    background-color: rgb(185, 123, 6);
+
+}
+
+#div1:hover {
+    position: relative;
+  animation-name: example;
+  animation-duration: 2s;
+}
+
+
+.card1{
+    width: 100%;
+    height: 250px;
+    padding: 2rem 1rem;
+    background: #fff;
+    position: relative;
+    box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
+    transition: 0.5s ease-in-out;
+}
+.card1::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,rgba(67, 82, 80, 0.5),rgb(39, 41, 22));
+    z-index: 2;
+    transition: 0.5s all;
+    opacity: 0;
+}
+.card1:hover::before{
+    opacity: 1;
+}
+.card1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.card1 .info{
+    position: relative;
+    z-index: 3;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s all;
+
+}
+.card1:hover .info{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+
+
+
+
+/* .............. button........................ */
+.bt {
+  border-radius: 4px;
+  background-color: #dd9a08;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.bt span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.bt span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.bt:hover span {
+  padding-right: 25px;
+}
+
+.bt:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+
+
+
+
+/* ..............images div.................... */
+.contain {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 250px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ba630083;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.contain:hover .overlay {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+
+.story {
+  /* width: 100px;
+  height: 100px;
+  background: red; */
+  transition: width 2s, height 2s, transform 2s;
+}
+
+.story:hover {
+  /* width: 300px;
+  height: 300px; */
+  transform: rotate(360deg);
+}
+    
+
+    
+</style>
+
+
+<div class="row">
+  <div class="col-sm-12 col-lg-12 col-md-12">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active " data-bs-interval="2000">
+          <div class="carousel-caption d-none d-md-block mb-5" >
+              <h1 class="mt-3" style="font-family:cursive;color: rgb(221, 145, 5);">Tasty And Delicious Food</h1>
+            <h3 class="pb-3" style="font-family: cursive;">CREAMY HOT AND READY TO SERVE.</h3>
+            <a href="{% url 'products1' %}" class="btn btn-light mb-5" ><b>Book a Table</b></a>
+              <a href="{% url 'home' %}" class="btn btn-light mb-5" ><b>Order Now</b></a>
+              
+  
+            </div>
+          <img src="https://www.myweeklypreview.com.au/wp-content/uploads/2019/07/CoverStory558-1.jpg"  class="d-block w-100 " alt="..." >
+          
+        </div>
+        <div class="carousel-item" data-bs-interval="2000" >
+          <div class="carousel-caption d-none d-md-block mb-5 ">
+              <h1 style="font-family:cursive">Tasty And Delicious Food</h1>
+              <h5 style="color: rgb(248, 247, 244);font-family: cursive;">Some representative placeholder content for the first slide.</h5>
+              <a href="{% url 'products1' %}" class="btn btn-light mb-5" ><b>Book a Table</b></a>
+  
+          </div>
+          <img src="https://littlebsale.co.uk/wp-content/uploads/sites/153/2022/11/CoffeeEvent.jpg"  class="d-block w-100" alt="..." >
+        </div>
+        <div class="carousel-item" data-bs-interval="2000" >
+          <div class="carousel-caption d-none d-md-block mb-5">
+              <h1 style="font-family:cursive;color: #c08507;">Tasty And Delicious Food</h1>
+              <h5 style="font-family: cursive;color: white;">Some representative placeholder content for the first slide.</h5>
+              <a href="{% url 'products1' %}" class="btn btn-light mb-5" ><b>Book a Table</b></a>
+  
+            </div>
+            <img src="https://asset.snoonu.com/test/headerimage_new/CmqwLBXVLd.jpg"  class="d-block w-100" alt="..." >
+  
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  
+  </div>
+</div>
+
+
+ <!-- <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+    <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+    <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+  </ol>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://www.myweeklypreview.com.au/wp-content/uploads/2019/07/CoverStory558-1.jpg"  class="d-block w-100 " alt="..." >
+      <div class="carousel-caption">
+        <h1 class="mt-3" style="font-family:cursive;color: rgb(221, 145, 5);">Tasty And Delicious Food</h1>
+            <h3 class="pb-3" style="font-family: cursive;">CREAMY HOT AND READY TO SERVE.</h3>
+            <a href="{% url 'products1' %}" class="btn btn-light mb-5" ><b>Book a Table</b></a>
+              <a href="{% url 'home' %}" class="btn btn-light mb-5" ><b>Order Now</b></a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://littlebsale.co.uk/wp-content/uploads/sites/153/2022/11/CoffeeEvent.jpg"  class="d-block w-100" alt="..." >
+      <div class="carousel-caption">
+        <h1 class="mt-3" style="font-family:cursive;color: rgb(221, 145, 5);">Tasty And Delicious Food</h1>
+            <h3 class="pb-3" style="font-family: cursive;">CREAMY HOT AND READY TO SERVE.</h3>
+            <a href="{% url 'products1' %}" class="btn btn-light mb-5" ><b>Book a Table</b></a>
+              <a href="{% url 'home' %}" class="btn btn-light mb-5" ><b>Order Now</b></a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://asset.snoonu.com/test/headerimage_new/CmqwLBXVLd.jpg"  class="d-block w-100" alt="..." >
+      <div class="carousel-caption">
+        <h1 class="mt-3" style="font-family:cursive;color: rgb(221, 145, 5);">Tasty And Delicious Food</h1>
+            <h3 class="pb-3" style="font-family: cursive;">CREAMY HOT AND READY TO SERVE.</h3>
+            <a href="{% url 'products1' %}" class="btn btn-light mb-5" ><b>Book a Table</b></a>
+              <a href="{% url 'home' %}" class="btn btn-light mb-5" ><b>Order Now</b></a>
+      </div>
+    </div>
+  </div>
+
+  <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+
+
+<div style="background-image: url(https://i.pinimg.com/originals/18/71/40/1871406a66cb03c94da8635e8261c5e4.jpg);background-repeat: no-repeat;background-size: cover;">
+    <div class="row pt-4">
+        <div class="col-sm-12 col-md-6 col-lg-6 ps-4 pe-4">
+            <div style="width: 100%;height: 250px;" >
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa4Qgxilofu7Mj8cdAd6Isaa6ESL1pX5FoVbM_H8jZrFLCDUstPDGg1yKDdrBvzFZxAcI&usqp=CAU" alt=""  style="width: 100%;height: 100%;">
+            </div>
+
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 ps-4 pe-4 pb-4">
+            <div  class="p-3 story" style="width: 100%;margin-top: 10%;background-color: rgba(53, 52, 52, 0.747);">
+                <h1 style="font-family: cursive;color: white;">OUR STORY</h1>
+                <p style="text-align: justify;color: rgb(179, 118, 6);">
+                    On her way she met a copy. The copy warned the Little Blind Text, that where it came from
+                     it would have been rewritten a thousand times and everything that was left from its origin would be
+                      the word "and" and the Little Blind Text should turn around and return to its own, safe country. 
+                      But nothing the copy said could convince her and so it didn’t take long until a few insidious
+                       Copy Writers ambushed her,
+                     made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.
+
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+ -->
+
+
+<div id="services" style="background-color: rgb(241, 157, 46);">
+    <div   style="background-color: rgba(26, 25, 25, 0.705);">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4"></div>
+            <div class="col-sm-12 col-md-4 col-lg-4 ">
+                <h6 class="mt-2" style="color: rgb(180, 111, 6);text-align: center;">WHY CHOOSE US</h6>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4"></div>
+    
+        </div>
+        <div class="row mt-2 ">
+            <div class="col-sm-12 col-md-3 col-lg-3"></div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <h2 style="color: white;"><p style="text-align: center;">Design The Concept</p>
+                    <p style="text-align: center;">Of Your Bussiness Idea Now</p>
+                </h2>
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-3"></div>
+        </div>
+        <div >
+            <div class="row pb-5 mt-2">
+              <div  class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+                <div id="div1" class="card story mt-3" style="background-color: rgba(48, 47, 47, 0.678);">
+                        <div class="card-body">
+                          <h5 class="card-title" style="color: rgb(211, 165, 16);text-align: center;">EASY TO ORDER</h5>
+                          <p class="card-text" style="color: rgb(199, 196, 196);text-align: justify;">With supporting text below as a natural lead-in to additional content.
+                            With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                      </div>
+                </div>
+                <div  class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+                  <div id="div1" class="card story mt-3" style="background-color: rgba(48, 47, 47, 0.678);">
+                        <div class="card-body" >
+                          <h5 class="card-title" style="color: rgb(211, 165, 16);text-align: center;">FASTEST DELIVERY</h5>
+                          <p class="card-text" style="color: rgb(196, 193, 193);text-align: justify;">With supporting text below as a natural lead-in to additional content.
+                            With supporting text below as a natural lead-in to additional content.</p>                         
+                        </div>
+                      </div>
+                </div>
+                <div  class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+                  <div id="div1" class="card story mt-3" style="background-color: rgba(48, 47, 47, 0.678);">
+                        <div class="card-body" >
+                          <h5 class="card-title" style="color: rgb(211, 165, 16);text-align: center;">QUALITY</h5>
+                          <p class="card-text" style="color: rgb(196, 192, 192);text-align: justify;">With supporting text below as a natural lead-in to additional content.
+                            With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                      </div>
+                </div>
+                <div  class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+                    <div id="div1" class="card story mt-3" style="background-color: rgba(48, 47, 47, 0.678);">
+                        <div class="card-body">
+                          <h5 class="card-title" style="color: rgb(211, 165, 16);text-align: center;">LOW PRICE</h5>
+                          <p class="card-text" style="color: rgb(189, 187, 187);text-align: justify;">With supporting text below as a natural lead-in to additional content.
+                            With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                      </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div style="background-image: url(https://i.pinimg.com/originals/18/71/40/1871406a66cb03c94da8635e8261c5e4.jpg);background-repeat: no-repeat;background-size: cover;">
+    <div class="row pt-1">
+        <div class="col-sm-12 col-md-6 col-lg-6 ps-4 pe-4">
+            <div class="row " style="margin-top: 10%;">
+                <div class="col-sm-12 col-md-3 col-lg-3"></div>
+                <div class="col-sm-12 col-md-3 col-lg-3"></div>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <h1 style="font-family: cursive;color: aliceblue;">OUR MENU</h1>
+
+            <p class="p-2" style="text-align: justify;color: rgb(168, 166, 166);">
+                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. 
+                Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+            </p>
+            <a href="{% url 'products' %}" class="btn btn-outline-warning ms-2">View Menu</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6  pb-4">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-6 ps-4 pe-4">
+                    <div class="mt-4" style="height: 200px; ">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgfangFNWwpUuAlEq8E7myN2WCIHi1-VEfiA&usqp=CAU" alt="" style="width: 100%;height: 200px;border-radius: 20px;">
+
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6 ps-4 pe-4">
+                  <div class="mt-4"  style="height: 200px;">
+                        <img src="https://static.toiimg.com/thumb/86367814.cms?width=680&height=512&imgsize=61542" alt="" style="width: 100%;height: 200px;border-radius: 20px;">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-6 col-lg-6 ps-4 pe-4">
+                <div class="mt-4" style="width: 100%;height: 200px;">
+                        <img src="https://media.istockphoto.com/id/1367031369/photo/latte-art-on-wooden-table.jpg?b=1&s=170667a&w=0&k=20&c=yfPniL73rfwCEDVEA2rAQJzm9WeVKGJlHz1Dzpa86Co=" alt="" style="width: 100%;height: 200px;border-radius: 20px;">
+
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6 ps-4 pe-4">
+                  <div class="mt-4"  style="width: 100%;height: 200px;">
+                        <img src="https://static.toiimg.com/thumb/86367814.cms?width=680&height=512&imgsize=61542" alt="" style="width: 100%;height: 200px;border-radius: 20px;">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="background-image:url(https://c4.wallpaperflare.com/wallpaper/258/801/308/coffee-4k-computer-hd-download-wallpaper-preview.jpg);background-repeat: no-repeat;background-size: cover;height: 350px;">
+    <div style="background-color: rgba(223, 154, 26, 0.493);height: 500px;">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <center>
+                    <h1  style="font-family: cursive;color: white;margin-top: 20%;">Discover Authentic Taste Of Coffee</h1>
+
+                    <a href="{% url 'products' %}" class="bt btn"><span>View Now</span></a>
+
+                </center>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4"></div>
+            <div class="col-sm-12 col-md-4 col-lg-4"></div>
+        </div>
+    </div>
+</div>
+
+
+<div style="background-image: url(https://i.pinimg.com/originals/18/71/40/1871406a66cb03c94da8635e8261c5e4.jpg);background-repeat: no-repeat;background-size: cover;">
+    <div class="row  pt-5 pe-2 ps-2">
+        <div class="col-sm-12 col-md-3 col-lg-3"></div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <h1 class="pt-5" style="color: white;font-family: cursive;text-align: center;">BEST COFFEE SELLERS</h1>
+            <p class="pe-2 ps-1" style="color: rgb(185, 123, 6); text-align: center;">
+                Far far away, behind the word mountains, far from the countries 
+                Vokalia and Consonantia, there live the blind texts.
+            </p>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3"></div>
+    </div>
+
+    <div class=" mb-5 mt-4">
+        <div class="row pb-5">
+            <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+                <div class="card1" style="border-radius: 20px;">
+                    <a href=""><img src="data:image/jpeg;base64,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" alt="" style="border-radius: 20px;"></a>
+                    <div class="info">
+                        <h1 style="color:#d1ac07;text-align: center;">Arabica</h1>
+                        <p style="text-align: justify;">With supporting text below as a natural lead-in to additional content.
+                            With supporting text below as a natural lead-in to additional content</p>
+                    </div>
+                </div>
+                <a href="{% url 'product_detail' %}" id="coffee" class="btn btn-warning p-1" style="color: rgb(12, 12, 12);" ><b>View Now</b></a>
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+                <div class="card1" style="border-radius: 20px;">
+                    <a href=""><img src="https://hips.hearstapps.com/hmg-prod/images/1519246658-irish-coffee-delish-1620163679.jpeg?crop=0.8890666666666666xw:1xh;center,top&resize=1200:*" style="border-radius: 20px;" alt=""></a>
+                    <div class="info">
+                        <h1 style="color: #d1ac07;text-align: center;">Arabica</h1>
+                        <p style="text-align: justify;">With supporting text below as a natural lead-in to additional content.
+                            With supporting text below as a natural lead-in to additional content</p>
+                    </div>
+                </div>
+                <a href="{% url 'product_detail' %}" id="coffee" class="btn btn-warning p-1" style="color: rgb(12, 12, 12);" ><b>View Now</b></a>
+
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+                <div class="card1" style="border-radius: 20px;">
+                    <a href=""><img src="https://i.pinimg.com/736x/35/5e/6c/355e6c95f6c083e12b1918c957bc5171.jpg" style="border-radius: 20px;" alt=""></a>
+                    <div class="info">
+                        <h1 style="color: #d1ac07;text-align: center;">Arabica</h1>
+                        <p style="text-align: justify;">With supporting text below as a natural lead-in to additional content.
+                            With supporting text below as a natural lead-in to additional content</p>
+                    </div>
+                </div>
+                <a href="{% url 'product_detail' %}" id="coffee" class="btn btn-warning p-1" style="color: rgb(12, 12, 12);" ><b>View Now</b></a>
+
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+                <div class="card1" style="border-radius: 20px;">
+                    <a href=""><img src="data:image/jpeg;base64,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" alt="" style="border-radius: 20px;"></a>
+                    <div class="info">
+                        <h1 style="color:#d1ac07;text-align: center;">Arabica</h1>
+                        <p style="text-align: justify;">With supporting text below as a natural lead-in to additional content.
+                            With supporting text below as a natural lead-in to additional content</p>
+                    </div>
+                </div>
+                <a href="{% url 'product_detail' %}" id="coffee" class="btn btn-warning p-1" style="color: rgb(12, 12, 12);" ><b>View Now</b></a>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+
+<!-- .........................................images div....................... -->
+
+<div style="margin-top: -3.6%;background-color: rgba(95, 63, 2, 0.767);">
+    <div class="row pb-3">
+        <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4 pt-3">
+            <div class="contain">
+                <img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/323/323927/woman-enjoying-coffee.jpg" alt="Avatar" class="image">
+                <div class="overlay">
+                  <div>
+                    <a href="">                  
+                          <img width="40" height="40" src="https://img.icons8.com/avantgarde/100/twitter.png" style="margin-top: 35%;margin-left: 25%;" alt="twitter"/>
+                          <img width="40" height="40" src="https://img.icons8.com/color/48/instagram-new--v1.png" style="margin-top: 35%;" alt="instagram-new--v1"/>
+                          <img width="40" height="40" src="https://img.icons8.com/color/48/facebook-circled--v1.png" style="margin-top: 35%;" alt="facebook-circled--v1"/>
+                    </a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4 pt-3">
+          <div class="contain">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc1rLAbrC5QjIBC7Uw8ksvaHkpxGwXtH62QYXSXB0TXn3vXF6ngsp1RoOcWVFx77bIt-k&usqp=CAU" alt="Avatar" class="image">
+                <div class="overlay">
+                  <div>
+                    <a href="">                  
+                          <img width="40" height="40" src="https://img.icons8.com/avantgarde/100/twitter.png" style="margin-top: 35%;margin-left: 25%;" alt="twitter"/>
+                          <img width="40" height="40" src="https://img.icons8.com/color/48/instagram-new--v1.png" style="margin-top: 35%;" alt="instagram-new--v1"/>
+                          <img width="40" height="40" src="https://img.icons8.com/color/48/facebook-circled--v1.png" style="margin-top: 35%;" alt="facebook-circled--v1"/>
+                    </a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4 pt-3">
+          <div class="contain">
+                <img src="https://beantomug.com/wp-content/uploads/2019/02/trycoffee.jpg" alt="Avatar" class="image">
+                <div class="overlay">
+                  <div>
+                    <a href="">                  
+                          <img width="40" height="40" src="https://img.icons8.com/avantgarde/100/twitter.png" style="margin-top: 35%;margin-left: 25%;" alt="twitter"/>
+                          <img width="40" height="40" src="https://img.icons8.com/color/48/instagram-new--v1.png" style="margin-top: 35%;" alt="instagram-new--v1"/>
+                          <img width="40" height="40" src="https://img.icons8.com/color/48/facebook-circled--v1.png" style="margin-top: 35%;" alt="facebook-circled--v1"/>
+                    </a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4 pt-3">
+          <div class="contain">
+                <img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/323/323927/woman-enjoying-coffee.jpg" alt="Avatar" class="image">
+                <div class="overlay">
+                  <div>
+                    <a href="">                  
+                          <img width="40" height="40" src="https://img.icons8.com/avantgarde/100/twitter.png" style="margin-top: 35%;margin-left: 25%;" alt="twitter"/>
+                          <img width="40" height="40" src="https://img.icons8.com/color/48/instagram-new--v1.png" style="margin-top: 35%;" alt="instagram-new--v1"/>
+                          <img width="40" height="40" src="https://img.icons8.com/color/48/facebook-circled--v1.png" style="margin-top: 35%;" alt="facebook-circled--v1"/>
+                    </a>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script>
+  var myCarousel = document.getElementById('myCarousel')
+  var carousel = new bootstrap.Carousel(myCarousel, {
+    interval: 5000, // Set the desired interval in milliseconds
+    wrap: true, // Enable continuous looping
+    keyboard: true // Enable keyboard navigation
+  });
+</script>
+
+
+{% endblock %}

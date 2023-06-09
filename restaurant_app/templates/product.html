@@ -1,0 +1,451 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    #div2 {
+  
+  position: relative;
+  animation-name: example1;
+  animation-duration: 2s;  
+  animation-fill-mode: forwards;
+}
+@keyframes example1 {
+  from {top:100px;}
+  to {top: 30px; color: rgb(199, 197, 197);}
+  
+}
+
+
+.flip-card {
+  background-color: transparent;
+  border-radius: 20px;
+  width: 100%;
+  height: 250px;
+  border: 1px solid #363636;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 20px;
+
+}
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  border-radius: 20px;
+
+}
+.flip-card-back {
+  background-color: rgba(136, 134, 134, 0.589);
+  color: white;
+  transform: rotateY(180deg);
+  border-radius: 20px;
+
+}
+
+
+    
+</style>
+
+<div style="background-image: url(https://cdn.wallpapersafari.com/74/68/4lrfTG.jpg);background-repeat: no-repeat;background-size: cover;height: 450px;">
+    <div style="background-color: rgba(128, 84, 3, 0.514);height: 450px;">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4">
+        
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div id="div2">
+                    <h1 style="font-family: cursive;color: rgb(247, 244, 244);text-align: center;margin-top: 30%;font-size: 500%;">Products</h1>
+                    <h5 style="color: white;text-align: center;">Home > Products ></h5>
+
+                </div>
+      
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4"></div>
+          </div>
+        
+    </div>
+  </div>
+
+  <!-- .............................  OUR PRODUCTS........................ -->
+  <div style="background-image: url(https://i.pinimg.com/originals/18/71/40/1871406a66cb03c94da8635e8261c5e4.jpg);background-repeat: no-repeat;background-size: cover;">
+    <div class="row pt-5">
+        <div class="col-sm-12 col-md-4 col-lg-4"></div>
+        <div class="col-sm-12 col-md-4 col-lg-4">
+            <center>
+                <h1 style="font-family: cursive;color: rgb(247, 246, 244);font-size: 400%;">Our Products</h1>
+                <p class="pe-2 ps-2" style="color: rgb(238, 157, 7);">
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                </p>
+
+            </center>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4"></div>
+    </div>
+    <div class="row pt-3 mb-5">
+        <div class="col-sm-12 col-md-4 col-lg-4"></div>
+        <div class="col-sm-12 col-md-4 col-lg-4">
+            <center>
+                    <a href="" class="btn btn-outline-light toggle1"><b>Coffee</b></a>
+                    <a href="" class="btn btn-outline-light toggle2"><b>Main Dish</b></a>
+
+                    <a href="" class="btn btn-outline-light"><b>Deserts</b></a>
+
+                    <a href="" class="btn btn-outline-light"><b>Drinks</b></a>
+
+            </center>
+
+
+
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4"></div>
+    </div>
+
+   
+<fieldset1>
+    <div class="row mt-5 ">
+        <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+            <div class="flip-card mt-3">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz8Kba38bwWA0pMgoBopJY3GEoZ6MVjHFM8vi2sx_vCS7JiwskghJGEBW_2ayTpYU4Ij0&usqp=CAU" alt="Avatar" style="width:100%;height:250px;border-radius: 20px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1 style="color: #cca704;">Spanish Latte</h1>
+                    <p class="ps-2 pe-2" style="text-align: justify;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis ,
+                    </p>
+                    <h5 style="color: #cca704;">$50</h5>
+                    <a href="{% url 'product_detail' %}" class="btn btn-outline-warning "> View Now</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+          <div class="flip-card mt-3">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeW4D-1ob54A_ba2jRI__iDqlbhosAhhSoKbMmgUR7rF9quWb2YrMHYeocSmfjZGfS1HI&usqp=CAU" alt="Avatar" style="width:100%;height:250px;border-radius: 20px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1 style="color: #cca704;">Spanish Latte</h1>
+                    <p class="ps-2 pe-2" style="text-align: justify;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis ,
+                    </p>
+                    <h5 style="color: #cca704;">$50</h5>
+                    <a href="{% url 'product_detail' %}" class="btn btn-outline-warning "> View Now</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+          <div class="flip-card mt-3">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDHrhweoqW-Q0TbAlGoGCP_EFeCPes7d4YVqG_KTaN0qVXl7SsHBY0NCNWLiKKFBTufnA&usqp=CAU" alt="Avatar" style="width:100%;height:250px;border-radius: 20px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1 style="color: #cca704;">Spanish Latte</h1>
+                    <p class="ps-2 pe-2" style="text-align: justify;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis ,
+                    </p>
+                    <h5 style="color: #cca704;">$50</h5>
+                    <a href="{% url 'product_detail' %}" class="btn btn-outline-warning "> View Now</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+          <div class="flip-card mt-3">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRjWc4ju5wJAb2wmCSTelSLjXIPmNj4bLyJA&usqp=CAU" alt="Avatar" style="width:100%;height:250px;border-radius: 20px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1 style="color: #cca704;">Spanish Latte</h1>
+                    <p class="ps-2 pe-2" style="text-align: justify;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis ,
+                    </p>
+                    <h5 style="color: #cca704;">$50</h5>
+                    <a href="{% url 'product_detail' %}" class="btn btn-outline-warning "> View Now</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+      <div class="row mt-3  pb-4">
+        <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+          <div class="flip-card mt-3">
+              <div class="flip-card-inner ">
+                <div class="flip-card-front">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz8Kba38bwWA0pMgoBopJY3GEoZ6MVjHFM8vi2sx_vCS7JiwskghJGEBW_2ayTpYU4Ij0&usqp=CAU" alt="Avatar" style="width:100%;height:250px;border-radius: 20px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1 style="color: #cca704;">Spanish Latte</h1>
+                    <p class="ps-2 pe-2" style="text-align: justify;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis ,
+                    </p>
+                    <h5 style="color: #cca704;">$50</h5>
+                    <a href="{% url 'product_detail' %}" class="btn btn-outline-warning "> View Now</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+          <div class="flip-card mt-3">
+              <div class="flip-card-inner ">
+                <div class="flip-card-front">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeW4D-1ob54A_ba2jRI__iDqlbhosAhhSoKbMmgUR7rF9quWb2YrMHYeocSmfjZGfS1HI&usqp=CAU" alt="Avatar" style="width:100%;height:250px;border-radius: 20px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1 style="color: #cca704;">Spanish Latte</h1>
+                    <p class="ps-2 pe-2" style="text-align: justify;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis ,
+                    </p>
+                    <h5 style="color: #cca704;">$50</h5>
+                    <a href="{% url 'product_detail' %}" class="btn btn-outline-warning "> View Now</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+          <div class="flip-card mt-3">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDHrhweoqW-Q0TbAlGoGCP_EFeCPes7d4YVqG_KTaN0qVXl7SsHBY0NCNWLiKKFBTufnA&usqp=CAU" alt="Avatar" style="width:100%;height:250px;border-radius: 20px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1 style="color: #cca704;">Spanish Latte</h1>
+                    <p class="ps-2 pe-2" style="text-align: justify;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis ,
+                    </p>
+                    <h5 style="color: #cca704;">$50</h5>
+                    <a href="{% url 'product_detail' %}" class="btn btn-outline-warning "> View Now</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+          <div class="flip-card mt-3">
+              <div class="flip-card-inner ">
+                <div class="flip-card-front">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRjWc4ju5wJAb2wmCSTelSLjXIPmNj4bLyJA&usqp=CAU" alt="Avatar" style="width:100%;height:250px;border-radius: 20px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1 style="color: #cca704;">Spanish Latte</h1>
+                    <p class="ps-2 pe-2" style="text-align: justify;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis ,
+                    </p>
+                    <h5 style="color: #cca704;">$50</h5>
+                    <a href="{% url 'product_detail' %}" class="btn btn-outline-warning "> View Now</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+</fieldset1>
+<fieldset2 style="display: none;">
+    <div class="row mt-3 ">
+      <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+        <div class="flip-card mt-3">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="https://watermark.lovepik.com/photo/20211120/large/lovepik-delicious-food-picture_500461660.jpg" alt="Avatar" style="width:100%;height:250px;border-radius: 20px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1 style="color: #cca704;">Spanish Latte</h1>
+                    <p class="ps-2 pe-2" style="text-align: justify;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis ,
+                    </p>
+                    <h5 style="color: #cca704;">$50</h5>
+                    <a href="{% url 'product_detail' %}" class="btn btn-outline-warning "> View Now</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+          <div class="flip-card mt-3">
+            <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="https://b.zmtcdn.com/data/reviews_photos/08a/1077b2f5dbd7d09fa82408540c2eb08a_1675954187.jpg" alt="Avatar" style="width:100%;height:250px;border-radius: 20px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1 style="color: #cca704;">Spanish Latte</h1>
+                    <p class="ps-2 pe-2" style="text-align: justify;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis ,
+                    </p>
+                    <h5 style="color: #cca704;">$50</h5>
+                    <a href="{% url 'product_detail' %}" class="btn btn-outline-warning "> View Now</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+          <div class="flip-card mt-3">
+            <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgAuOWhi_rEUzmFmHUpzMzsnJBjK6QvEV-OxxutpyqWQ84IrcaGNp9M-_pC_dOGs0b5aA&usqp=CAU" alt="Avatar" style="width:100%;height:250px;border-radius: 20px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1 style="color: #cca704;">Spanish Latte</h1>
+                    <p class="ps-2 pe-2" style="text-align: justify;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis ,
+                    </p>
+                    <h5 style="color: #cca704;">$50</h5>
+                    <a href="{% url 'product_detail' %}" class="btn btn-outline-warning "> View Now</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+          <div class="flip-card mt-3">
+            <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr2bm6N1xTeYRwzxqQPkK4MX-8BJvHM6n_b_kb3_Z-0zXpRHsHDvwEffffzicwMQLZNI4&usqp=CAU" alt="Avatar" style="width:100%;height:250px;border-radius: 20px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1 style="color: #cca704;">Spanish Latte</h1>
+                    <p class="ps-2 pe-2" style="text-align: justify;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis ,
+                    </p>
+                    <h5 style="color: #cca704;">$50</h5>
+                    <a href="{% url 'product_detail' %}" class="btn btn-outline-warning "> View Now</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+
+      <div class="row mt-2  pb-4">
+        <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+          <div class="flip-card mt-3">
+            <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="https://watermark.lovepik.com/photo/20211120/large/lovepik-delicious-food-picture_500461660.jpg" alt="Avatar" style="width:100%;height:250px;border-radius: 20px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1 style="color: #cca704;">Spanish Latte</h1>
+                    <p class="ps-2 pe-2" style="text-align: justify;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis ,
+                    </p>
+                    <h5 style="color: #cca704;">$50</h5>
+                    <a href="{% url 'product_detail' %}" class="btn btn-outline-warning "> View Now</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+          <div class="flip-card mt-3">
+            <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="https://b.zmtcdn.com/data/reviews_photos/08a/1077b2f5dbd7d09fa82408540c2eb08a_1675954187.jpg" alt="Avatar" style="width:100%;height:250px;border-radius: 20px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1 style="color: #cca704;">Spanish Latte</h1>
+                    <p class="ps-2 pe-2" style="text-align: justify;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis ,
+                    </p>
+                    <h5 style="color: #cca704;">$50</h5>
+                    <a href="{% url 'product_detail' %}" class="btn btn-outline-warning "> View Now</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+          <div class="flip-card mt-3">
+            <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgAuOWhi_rEUzmFmHUpzMzsnJBjK6QvEV-OxxutpyqWQ84IrcaGNp9M-_pC_dOGs0b5aA&usqp=CAU" alt="Avatar" style="width:100%;height:250px;border-radius: 20px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1 style="color: #cca704;">Spanish Latte</h1>
+                    <p class="ps-2 pe-2" style="text-align: justify;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis ,
+                    </p>
+                    <h5 style="color: #cca704;">$50</h5>
+                    <a href="{% url 'product_detail' %}" class="btn btn-outline-warning "> View Now</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 ps-4 pe-4">
+          <div class="flip-card mt-3">
+            <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr2bm6N1xTeYRwzxqQPkK4MX-8BJvHM6n_b_kb3_Z-0zXpRHsHDvwEffffzicwMQLZNI4&usqp=CAU" alt="Avatar" style="width:100%;height:250px;border-radius: 20px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1 style="color: #cca704;">Spanish Latte</h1>
+                    <p class="ps-2 pe-2" style="text-align: justify;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus 
+                        perferendis ,
+                    </p>
+                    <h5 style="color: #cca704;">$50</h5>
+                    <a href="{% url 'product_detail' %}" class="btn btn-outline-warning "> View Now</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+</fieldset2>
+    
+    
+  </div>
+
+  
+  <script>
+     $(document).ready(function () {
+        $(".toggle1").click(function (e) {
+          e.preventDefault();
+          $("fieldset1").toggle();
+          $("fieldset2").hide();
+
+        })
+      })
+
+      $(document).ready(function () {
+        $(".toggle2").click(function (e) {
+          e.preventDefault();
+          $("fieldset2").toggle();
+          $("fieldset1").hide();
+
+        })
+      })
+
+  </script>
+
+
+{% endblock %}

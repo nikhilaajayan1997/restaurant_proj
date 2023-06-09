@@ -1,0 +1,113 @@
+{% extends 'base1.html' %}
+{% block content %}
+
+<style>
+
+#div2 {
+  
+  position: relative;
+  animation-name: example1;
+  animation-duration: 2s;  
+  animation-fill-mode: forwards;
+}
+@keyframes example1 {
+  from {top:100px;}
+  to {top: 30px; color: rgb(199, 197, 197);}
+  
+}
+
+
+</style>
+
+<div style="background-image: url(https://cdn.wallpapersafari.com/74/68/4lrfTG.jpg);background-repeat: no-repeat;background-size: cover;height: 450px;">
+    <div style="background-color: rgba(128, 84, 3, 0.514);height: 450px;">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4">
+        
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div id="div2">
+                    <h1 style="font-family: cursive;color: rgb(247, 244, 244);text-align: center;margin-top: 30%;font-size: 500%;">Cart</h1>
+                    <h5 style="color: white;text-align: center;">Home > Cart ></h5>
+
+                </div>
+      
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4"></div>
+          </div>
+        
+    </div>
+  </div>
+
+
+  <div style="background-image: url(https://i.pinimg.com/originals/18/71/40/1871406a66cb03c94da8635e8261c5e4.jpg);background-repeat: no-repeat;background-size: cover;">
+    <!-- <div class="row pt-5">
+        <div class="col-sm-12 col-md-1 col-lg-1"></div>
+        <div class="col-sm-12 col-md-10 col-lg-10">
+           <center>
+            <div class="card mb-3" style="max-width: 600px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="https://b.zmtcdn.com/data/reviews_photos/08a/1077b2f5dbd7d09fa82408540c2eb08a_1675954187.jpg" class="img-fluid rounded-start" alt="..." style="height: 100%;">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Malayi Koffta</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <h6>price : $50</h6>
+                      <h6>Qty : 1</h6>
+                      <a href="{% url 'checkout' %}" class=" btn btn-dark">Pay Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+           </center>
+        </div>
+        <div class="col-sm-12 col-md-1 col-lg-1"></div>
+    </div> -->
+    <div class="row pt-5">
+        <div class="col-sm-12 col-md-1 col-lg-1"></div>
+        <div class="col-sm-12 col-md-10 col-lg-10 ps-4 pe-4 pb-5">
+           <center>
+            <div class="card mb-3" style="max-width: 600px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="https://watermark.lovepik.com/photo/20211120/large/lovepik-delicious-food-picture_500461660.jpg" class="img-fluid rounded-start" alt="..." style="height: 100%;">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Malayi Koffta</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <!-- <h6>price : $50</h6> -->
+                      <!-- <h6>Qty : 1</h6> -->
+                      <label for=""><b>Price :</b></label><label for="" style="color: rgb(192, 126, 4);"><b>$</b></label><label for="" id="price" style="color: rgb(192, 126, 4);"><b>50</b></label><br>
+                      <label for="" style="font-family: cursive;" class="mt-1"><b>Qty :</b></label>
+                      <select class="mt-1" name="" id="select" onclick="price()">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select><br>
+                      <a href="{% url 'checkout' %}" class=" btn btn-dark mt-2 mb-5">Pay Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+           </center>
+        </div>
+        <div class="col-sm-12 col-md-1 col-lg-1"></div>
+    </div>
+
+    
+
+  </div>
+
+  <script>
+    function price(){
+      var x=document.getElementById("select").value;
+      var y=50;
+      var z=y*x;
+      document.getElementById("price").innerHTML=z;
+    }
+  </script>
+
+{% endblock %}
